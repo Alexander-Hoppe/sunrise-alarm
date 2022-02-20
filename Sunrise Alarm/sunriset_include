@@ -142,11 +142,11 @@ void not_main(void)
             printf( "Input date ( yyyy mm dd ) (ctrl-C exits): " );
            // scanf( "%d %d %d", &year, &month, &day );
 
-lat = 34.052;
-lon = -118.2478;
-year = 2011;
-month = 9;
-day = 24;
+lat = 48.1379879;
+lon = 11.575182;
+year = 2022;
+month = 2;
+day = 20;
             daylen  = day_length(year,month,day,lon,lat);
             civlen  = day_civil_twilight_length(year,month,day,lon,lat);
             nautlen = day_nautical_twilight_length(year,month,day,lon,lat);
