@@ -232,7 +232,7 @@
 - (void)updateLocation
 {
 #if TARGET_IPHONE_SIMULATOR
-  CLLocation*fakeLocation = [[[CLLocation alloc] initWithLatitude:34.052 longitude:-118.2478] autorelease];
+  CLLocation*fakeLocation = [[[CLLocation alloc] initWithLatitude:48.1380 longitude:11.5752] autorelease];
   [self locationManager:locationManager didUpdateToLocation:fakeLocation fromLocation:nil];
 #else   
   [locationManager startMonitoringSignificantLocationChanges];
