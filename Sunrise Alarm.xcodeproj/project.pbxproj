@@ -127,10 +127,8 @@
 		79A8FB7E14008CB60011D08C /* Sunrise_AlarmAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sunrise_AlarmAppDelegate.m; sourceTree = "<group>"; };
 		79A8FB8114008CB60011D08C /* Sunrise_AlarmAppDelegate_iPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sunrise_AlarmAppDelegate_iPhone.h; path = iPhone/Sunrise_AlarmAppDelegate_iPhone.h; sourceTree = "<group>"; };
 		79A8FB8214008CB60011D08C /* Sunrise_AlarmAppDelegate_iPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Sunrise_AlarmAppDelegate_iPhone.m; path = iPhone/Sunrise_AlarmAppDelegate_iPhone.m; sourceTree = "<group>"; };
-		79A8FB8514008CB60011D08C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPhone/en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
 		79A8FB8814008CB60011D08C /* Sunrise_AlarmAppDelegate_iPad.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sunrise_AlarmAppDelegate_iPad.h; path = iPad/Sunrise_AlarmAppDelegate_iPad.h; sourceTree = "<group>"; };
 		79A8FB8914008CB60011D08C /* Sunrise_AlarmAppDelegate_iPad.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Sunrise_AlarmAppDelegate_iPad.m; path = iPad/Sunrise_AlarmAppDelegate_iPad.m; sourceTree = "<group>"; };
-		79A8FB8C14008CB60011D08C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = iPad/en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 		79A8FB9314008CB60011D08C /* Sunrise AlarmTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sunrise AlarmTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A8FB9B14008CB60011D08C /* Sunrise AlarmTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sunrise AlarmTests-Info.plist"; sourceTree = "<group>"; };
 		79A8FB9D14008CB60011D08C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -197,6 +195,8 @@
 		79B42CF11404A3C500E18817 /* green-iPad-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-iPad-highlight.png"; sourceTree = "<group>"; };
 		79B42CF21404A3C500E18817 /* red-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-iPad.png"; sourceTree = "<group>"; };
 		79B42CF31404A3C600E18817 /* red-iPad-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-iPad-highlight.png"; sourceTree = "<group>"; };
+		FAA9633B27C23CF300806FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = iPhone/Base.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		FAA9633C27C23CF400806FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = iPad/Base.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -446,14 +446,24 @@
 		79A8FB6114008CB60011D08C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					79A8FB6914008CB60011D08C = {
+						DevelopmentTeam = RSGD7S9YQA;
+						ProvisioningStyle = Automatic;
+					};
+					79A8FB9214008CB60011D08C = {
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 79A8FB6414008CB60011D08C /* Build configuration list for PBXProject "Sunrise Alarm" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 79A8FB5F14008CB60011D08C;
 			productRefGroup = 79A8FB6B14008CB60011D08C /* Products */;
@@ -599,7 +609,7 @@
 		79A8FB8414008CB60011D08C /* MainWindow_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				79A8FB8514008CB60011D08C /* en */,
+				FAA9633B27C23CF300806FFE /* Base */,
 			);
 			name = MainWindow_iPhone.xib;
 			sourceTree = "<group>";
@@ -607,7 +617,7 @@
 		79A8FB8B14008CB60011D08C /* MainWindow_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				79A8FB8C14008CB60011D08C /* en */,
+				FAA9633C27C23CF400806FFE /* Base */,
 			);
 			name = MainWindow_iPad.xib;
 			sourceTree = "<group>";
@@ -626,9 +636,10 @@
 		79A8FBA414008CB60011D08C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: david finucane (Z6R4YC8XL3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -636,7 +647,8 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "EBBBF371-C28C-4365-BEE4-EB5125F22F0D";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -646,14 +658,14 @@
 		79A8FBA514008CB60011D08C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: david finucane (Z6R4YC8XL3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "EBBBF371-C28C-4365-BEE4-EB5125F22F0D";
 				SDKROOT = iphoneos;
@@ -665,17 +677,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: david finucane (Z6R4YC8XL3)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = RSGD7S9YQA;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sunrise Alarm/Sunrise Alarm-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Sunrise Alarm/Sunrise Alarm-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexander-hoppe.sunrisealarm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -686,6 +703,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sunrise Alarm.app/Sunrise Alarm";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -699,6 +721,8 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -709,6 +733,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sunrise Alarm.app/Sunrise Alarm";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
@@ -722,8 +751,22 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		FAA9633A27B2679E00806FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidfinucane.sunrisealarm;
+				PRODUCT_NAME = "Sunrise Alarm";
 			};
 			name = Release;
 		};
@@ -743,6 +786,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				79A8FBA714008CB70011D08C /* Debug */,
+				FAA9633A27B2679E00806FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
